@@ -1,0 +1,159 @@
+<h2 mat-dialog-title>Membership Details</h2>
+<mat-dialog-content>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="personalDetailsFormGroup">
+      <form [formGroup]="personalDetailsFormGroup">
+        <ng-template matStepLabel>Personal Details</ng-template>
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              @for (gender of genders; track gender) {
+              <mat-option [value]="gender.value">{{
+                gender.viewValue
+              }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Weight</mat-label>
+            <input matInput formControlName="weight" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Height</mat-label>
+            <input matInput formControlName="height" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Hip Size</mat-label>
+            <input matInput formControlName="hipsize" required />
+          </mat-form-field>
+        </div>
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Contact Number</mat-label>
+            <input matInput formControlName="contactnumber" required />
+          </mat-form-field>
+        </div>
+        <!-- <div>
+              <button mat-button matStepperNext>Next</button>
+            </div> -->
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="feesDetailsFormGroup" label="Fees Details">
+      <form [formGroup]="feesDetailsFormGroup">
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Plan Duration</mat-label>
+            <mat-select formControlName="duration">
+              @for (duration of durations; track duration) {
+              <mat-option [value]="duration.value">{{
+                duration.viewValue
+              }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fees Paid On Date</mat-label>
+            <input matInput formControlName="feespaiddate" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Mode Of Payment</mat-label>
+            <mat-select formControlName="mode">
+              @for (mode of modes; track mode) {
+              <mat-option [value]="mode.value">{{
+                mode.viewValue
+              }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Fees Paid</mat-label>
+            <input matInput formControlName="feespaid" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fees Pending</mat-label>
+            <input matInput formControlName="feespending" required />
+          </mat-form-field>
+        </div>
+        <!-- <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div> -->
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="otherDetailsFormGroup" label="Other Details">
+      <form [formGroup]="otherDetailsFormGroup">
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Referred By</mat-label>
+            <input matInput formControlName="referredby" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Prefered Timing</mat-label>
+            <mat-select formControlName="timing">
+                @for (timing of timings; track timing) {
+                <mat-option [value]="timing.value">{{
+                    timing.viewValue
+                }}</mat-option>
+                }
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Goal</mat-label>
+            <mat-select formControlName="goal">
+                @for (goal of goals; track goal) {
+                <mat-option [value]="goal.value">{{
+                    goal.viewValue
+                }}</mat-option>
+                }
+              </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="formRows">
+          <mat-form-field>
+            <mat-label>Snacks Subscription</mat-label>
+            <mat-select formControlName="snacks">
+                @for (snack of snacks; track snack) {
+                <mat-option [value]="snack.value">{{
+                    snack.viewValue
+                }}</mat-option>
+                }
+              </mat-select>
+          </mat-form-field>
+        </div>
+        <!-- <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div> -->
+      </form>
+    </mat-step>
+    <!-- <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step> -->
+  </mat-stepper>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="submit()" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

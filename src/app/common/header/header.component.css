@@ -1,0 +1,50 @@
+.headerMain{
+    width: 100%;
+    height: 64px;
+    background:#0c0f16;
+    padding: 0px;
+    box-shadow: none;
+    display: flex;
+}
+.title{
+    color: white;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.logo{
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.logoContainer{
+    width: 8%;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.headerButtons {
+  width: 50%;
+  display: flex;
+  gap: 5%;
+  margin-left: 6%;
+  margin-top: 1%;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.mat-mdc-button {
+  color: white !important;
+}
+.mat-mdc-raised-button{
+  background-color: yellow !important;
+  color: black !important;
+}
