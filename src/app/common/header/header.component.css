@@ -12,10 +12,15 @@
     padding-top: 10px;
 }
 
-.logo{
+.brandLogo{
     width: 100%;
     padding-left: 10px;
-    padding-top: 2px;
+    padding-top: 3px;
+}
+.titleLogo{
+  width: 300px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .logoContainer{
